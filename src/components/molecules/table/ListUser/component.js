@@ -8,12 +8,13 @@ import {
   TableBody,
   Avatar,
   Button,
+  TablePagination,
 } from '@mui/material';
 
 import PropTypes from 'prop-types';
 
 const Component = (props) => {
-  const { data } = props;
+  const { data, page, rowsPerPage, count, handlePageChange } = props;
 
   return (
     <>
@@ -36,7 +37,7 @@ const Component = (props) => {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {i + 1}
+                  {item.id}
                 </TableCell>
                 <TableCell align="left">
                   {' '}
@@ -45,16 +46,26 @@ const Component = (props) => {
                 <TableCell align="left">{item.email}</TableCell>
                 <TableCell align="left">{item.first_name}</TableCell>
                 <TableCell align="left">{item.last_name}</TableCell>
-                <TableCell align="left"><Button
-                  variant="contained"
-                  sx={{backgroundColor: '#3178F6', boxShadow: 'none' }}
-                >
-                  Detail
-                </Button></TableCell>
+                <TableCell align="left">
+                  <Button
+                    variant="contained"
+                    sx={{ backgroundColor: '#3178F6', boxShadow: 'none' }}
+                  >
+                    Detail
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
+        <TablePagination
+          rowsPerPageOptions={[6]} // Set rows per page options
+          component="div"
+          count={count}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handlePageChange}
+        />
       </TableContainer>
     </>
   );
@@ -63,4 +74,7 @@ const Component = (props) => {
 export default Component;
 Component.propTypes = {
   data: PropTypes.array,
+  count: PropTypes.number,
+  rowsPerPage: PropTypes.number,
+  handlePageChange: PropTypes.func,
 };

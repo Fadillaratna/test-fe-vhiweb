@@ -20,17 +20,34 @@ import axios from 'axios';
 
 const Component = () => {
   const [users, setUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0); // Initialize to 0 for 0-based indexing
+  const [totalPages, setTotalPages] = useState(0); // Initialize to 0 for 0-based indexing
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const _getAllUser = async () => {
+  const rowsPerPage = 6;
+
+  const _getAllUser = async (page) => {
     try {
-      const response = await axios.get('https://reqres.in/api/users');
+      const response = await axios.get(`${SERVICES.USERS}?page=${page}`);
       setUsers(response.data.data);
-    } catch (error) {}
+      setTotalPages(response.data.total_pages);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
   };
 
+  const filteredUsers = users.filter((user) => {
+    const fullName = `${user.first_name} ${user.last_name}`;
+    return fullName.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
   useEffect(() => {
-    _getAllUser();
-  }, []);
+    _getAllUser(currentPage + 1); // Add 1 to convert to 1-based indexing
+  }, [currentPage]);
+
+  const handlePageChange = (event, newPage) => {
+    setCurrentPage(newPage);
+  };
 
   return (
     <>
@@ -38,7 +55,7 @@ const Component = () => {
         <Stack direction="column" spacing={1}>
           <Typography fontWeight={600}>List User</Typography>
           <Typography fontWeight={400} sx={{ fontSize: 15 }}>
-            {users.length} data
+            {filteredUsers.length} data
           </Typography>
         </Stack>
         <FormControl sx={{ m: 1, width: '58ch' }} variant="outlined" size="small">
@@ -50,11 +67,17 @@ const Component = () => {
               </InputAdornment>
             }
             placeholder="Search"
-            // onChange={(e) => setKeyword(e.target.value)}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </FormControl>
       </Stack>
-      <TableUser data={users} />
+      <TableUser
+        data={filteredUsers}
+        page={currentPage}
+        rowsPerPage={rowsPerPage}
+        count={totalPages * rowsPerPage} // Estimate total count based on total pages and rows per page
+        handlePageChange={handlePageChange}
+      />
     </>
   );
 };
