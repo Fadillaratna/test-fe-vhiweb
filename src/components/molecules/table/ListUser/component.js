@@ -53,7 +53,7 @@ const Component = (props) => {
                   <Button
                     variant="contained"
                     sx={{ backgroundColor: '#3178F6', boxShadow: 'none' }}
-                    onClick={() => navigate(`/user/${item.id}`)}
+                    onClick={() => navigate(`/users/${item.id}`)}
                   >
                     Detail
                   </Button>

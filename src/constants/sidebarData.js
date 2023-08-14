@@ -1,12 +1,6 @@
 import React from 'react';
 import {
   GridViewRounded,
-  PriceChange,
-  Payment,
-  TableBarRounded,
-  FoodBankRounded,
-  FastfoodRounded, 
-  CoffeeRounded,
   GroupRounded,
 } from '@mui/icons-material';
 import { ROUTES } from '../config';
