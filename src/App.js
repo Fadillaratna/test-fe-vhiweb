@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
+import { ROUTES } from './config';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+
+import PublicRoute from './constants/PublicRoute';
+import PrivateRoute from './constants/PrivateRoute';
+
+import Login from './containers/pages/Login';
+import Dashboard from './containers/pages/Dashboard';
+import Users from './containers/pages/Users';
+
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Poppins',
+  },
+});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Routes>
+        <Route
+          path={ROUTES.LOGIN}
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path={ROUTES.DASHBOARD}
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path={ROUTES.LIST_USERS}
+          element={
+            <PrivateRoute>
+              <Users />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
