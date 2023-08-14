@@ -5,6 +5,7 @@ Deploy link : https://test-fe-vhiweb.netlify.app/
 
 # Structure Folder
 ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/e65f508c-3989-4681-9527-71fc65039ccf)
+
 Dalam folder src terdapat beberapa folder lagi di dalamnya diantaranya
 assets --> berisi file-file image yang akan digunakan sebagai aset UI
 components --> folder yang berisikan atoms dan moleculs
@@ -22,7 +23,9 @@ utils --> folder yang berisikan function yang akan digunakan lebih dari 1 kali, 
 App.js --> file untuk mengatur routes dan route project
 
 Codebase yang saya gunakan menerapkan Atomic Design. 
+
 ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/fe60979e-a27d-4193-b251-f28771f7a5a7)
+
 Atomic design merupakan cara mengorganisir dan membangun komponen-komponen dalam hirarki kompleksitas yang meningkat, berdasarkan atom, molekul, organisme, template, dan halaman. Berikut adalah gambaran contoh atomic design:
 Atoms --> komponen terkecil
 Moleculs --> komponen lebih kompleks yang terdiri dari penggabungan atom
