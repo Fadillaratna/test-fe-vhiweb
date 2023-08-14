@@ -43,7 +43,7 @@ Pages --> tempat untuk menggunakan template dan diisi dengan konten.
 
 # Instruction
 1. Login Page
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/d80b0605-3dc4-4624-9637-37dc97eaa028)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/72b4b303-5cba-4ff9-aa09-30d28ff97151)
    Inputkan email dan password:
    Email --> eve.holt@reqres.in
    Password --> cityslicka
@@ -54,19 +54,19 @@ Pages --> tempat untuk menggunakan template dan diisi dengan konten.
 
 
 3. Dashboard Page
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/b2a25272-7462-4dd6-b6ba-462415ee4dd3)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/93d35a25-bffb-446c-ba27-e9385b3c3935)
    Pada header tedapat username, jika username diklik akan show menu logout. Apabila klik logout maka user akan logout (clear storage) dan redirect menuju page login. Terdapat button Start Now jika diklik akan redirect pada page List Users (/users)
 
 5. List Users
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/d60f9b9c-3e00-4f16-a0d6-a08ded62cc61)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/383fc26e-6023-44a2-b466-d21926e090a5)
    Menampilkan list users yang difetch dari api get list users. Terdapat filter user by full name dan ada juga button detail yang jika diklik akan redirect ke detail user (users/${id})
 
 7. Detail User
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/a7fcd424-b618-41e7-bdc0-b98e28dd5b05)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/5ca03ba2-204c-41db-80f8-2c954246faf4)
    Menampilkan detail user berdasarkan id pada params. Terdapat action back to page list users dengan klik arrow back button
 
    untuk case 'User not found', terjadi jika user dengan id pada params tidak ditemukan.
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/03f7b2c0-0fc4-49ae-b893-92935e78745c)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/9a02ae89-ae05-44d7-8848-cc97a28da059)
 
 9. Page Not Fpund
    ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/8860158c-69c7-4b29-9b65-202584921963)
