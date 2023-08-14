@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router';
 
@@ -59,10 +59,8 @@ const Component = (props) => {
   const dispacth = useDispatch();
   const navigate = useNavigate();
 
-  // const [sidebarData, setSidebarData] = useState([])
   const { title } = props;
   const { openDrawer } = useSelector((file) => file.global);
-
 
   const _handleLogout = () => {
     clearLocalStorage();

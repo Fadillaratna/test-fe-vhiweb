@@ -12,9 +12,12 @@ import {
 } from '@mui/material';
 
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const Component = (props) => {
   const { data, page, rowsPerPage, count, handlePageChange } = props;
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -50,6 +53,7 @@ const Component = (props) => {
                   <Button
                     variant="contained"
                     sx={{ backgroundColor: '#3178F6', boxShadow: 'none' }}
+                    onClick={() => navigate(`/user/${item.id}`)}
                   >
                     Detail
                   </Button>

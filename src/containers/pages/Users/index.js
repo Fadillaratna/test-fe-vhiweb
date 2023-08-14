@@ -1,9 +1,9 @@
 import React from 'react';
-import UserTemplate from '../../templates/User';
+import UsersTemplate from '../../templates/Users';
 
 const Users = () => {
 
-  return <UserTemplate />;
+  return <UsersTemplate />;
 };
 
 export default Users;

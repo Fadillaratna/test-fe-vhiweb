@@ -26,18 +26,17 @@ const Component = () => {
     setLoading(true);
     try {
       const response = await axios.post(SERVICES.LOGIN, payload);
-        setToken(response.data.token);
-        setUserData({email: payload.email})
-        setAlert({
-          show: true,
-          message: 'Success Login',
-          severity: 'success',
-        });
-        setTimeout(() => {
-          setLoading(false);
-          navigate(ROUTES.DASHBOARD);
-        }, 100);
-      // }
+      setToken(response.data.token);
+      setUserData({ email: payload.email });
+      setAlert({
+        show: true,
+        message: 'Success Login',
+        severity: 'success',
+      });
+      setTimeout(() => {
+        setLoading(false);
+        navigate(ROUTES.DASHBOARD);
+      }, 500);
     } catch (error) {
       setLoading(false);
       setAlert({

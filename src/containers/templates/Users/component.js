@@ -2,11 +2,9 @@ import React from 'react';
 
 //? Component
 import MainLayout from '../../organisms/MainLayout';
-import {
-  Paper,
-} from '@mui/material';
+import { Paper } from '@mui/material';
 
-import UserOrganisms from '../../organisms/ListUser';
+import UsersOrganisms from '../../organisms/ListUser';
 
 const Component = () => {
   return (
@@ -14,7 +12,7 @@ const Component = () => {
       <MainLayout title="Users">
         <>
           <Paper sx={{ p: 4, minWidth: 100, overflow: 'auto' }}>
-            <UserOrganisms />
+            <UsersOrganisms />
           </Paper>
         </>
       </MainLayout>

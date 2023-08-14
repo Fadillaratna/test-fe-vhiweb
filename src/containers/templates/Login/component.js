@@ -18,7 +18,7 @@ const Component = () => {
         md={6}
         sx={{
           backgroundImage:
-            'url(https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)',
+            'url(https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)',
           backgroundRepeat: 'no-repeat',
           backgroundColor: (t) =>
             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -26,8 +26,8 @@ const Component = () => {
           backgroundPosition: 'center',
         }}
       />
-      <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} sx={{px: 4}}square>
-        <Stack direction="row" spacing={3} sx={{ marginTop: 15, px: 8}} alignItems="center">
+      <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} sx={{ px: 4 }} square>
+        <Stack direction="row" spacing={3} sx={{ marginTop: 15, px: 8 }} alignItems="center">
           <Logo width={60} height={60} />
           <Stack direction="column" spacing={1}>
             <Typography variant="h5" sx={{ fontSize: 20 }} fontWeight={700}>

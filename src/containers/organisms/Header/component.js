@@ -36,7 +36,7 @@ const Component = (props) => {
 
   const _handleLogout = () => {
     clearLocalStorage();
-    navigate(ROUTES.LOGIN)
+    navigate(ROUTES.LOGIN);
   };
 
   let project = title === 'InstantApi';

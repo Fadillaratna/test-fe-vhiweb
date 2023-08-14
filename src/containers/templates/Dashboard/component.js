@@ -2,12 +2,10 @@ import React from 'react';
 
 //? Component
 import MainLayout from '../../organisms/MainLayout';
-// import PieBar from '../../../components/atoms/PieBar';
 import { Grid, Box, Typography, Button } from '@mui/material';
 
 import illustration from '../../../assets/homeIllus.png';
 
-import { getUserData } from '../../../utils/storage';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../config';
 
@@ -33,8 +31,7 @@ const Component = () => {
                   sx={{ my: 2, color: 'grey', fontSize: 20, lineHeight: 2 }}
                   fontWeight={400}
                 >
-                  Welcome at Specta Cafe. <br /> Happy working
-                  and managing the dashboard well!
+                  Welcome back at Specta Company. <br /> Happy working and managing the dashboard well!
                 </Typography>
                 <Button
                   variant="contained"
@@ -47,14 +44,7 @@ const Component = () => {
               </Box>
             </Grid>
             <Grid item xs={4}>
-              
-                  <img
-                    src={illustration}
-                    alt=""
-                    width={330}
-                    height={461}
-                    style={{ marginLeft: 10 }}
-                  />
+              <img src={illustration} alt="" width={400} height={350} style={{ marginLeft: -50 }} />
             </Grid>
           </Grid>
         </>
