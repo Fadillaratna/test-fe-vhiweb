@@ -9,14 +9,13 @@ import { clearLocalStorage } from '../../../utils/storage';
 //? Material UI
 import {
   AppBar,
-  IconButton,
   ListItemIcon,
   Menu,
   MenuItem,
   Toolbar,
   Typography,
 } from '@mui/material';
-import { ArrowBackRounded, LogoutRounded } from '@mui/icons-material';
+import { LogoutRounded } from '@mui/icons-material';
 import { useTheme } from '@emotion/react';
 import { getUserData } from '../../../utils/storage';
 
@@ -39,21 +38,9 @@ const Component = (props) => {
     navigate(ROUTES.LOGIN);
   };
 
-  let project = title === 'InstantApi';
-  let apidocs = title === 'INSTANTAPI';
-
   return (
-    <AppBar
-      position={position}
-      open={openDrawer}
-      sx={styles.rootAppBar(theme, openDrawer, project, apidocs)}
-    >
+    <AppBar position={position} open={openDrawer} sx={styles.rootAppBar(theme, openDrawer)}>
       <Toolbar sx={{ my: 'auto' }}>
-        {title === 'InstantApi' ? (
-          <IconButton sx={{ color: '#ffffff' }} href={ROUTES.DASHBOARD}>
-            <ArrowBackRounded />
-          </IconButton>
-        ) : null}
         <Typography noWrap sx={{ pl: 4 }} variant="h6">
           {title}
         </Typography>
