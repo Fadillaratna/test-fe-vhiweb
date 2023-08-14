@@ -22,9 +22,8 @@ utils --> folder yang berisikan function yang akan digunakan lebih dari 1 kali, 
 App.js --> file untuk mengatur routes dan route project
 
 Codebase yang saya gunakan menerapkan Atomic Design. 
-![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/2f4b11e7-1a47-4ce3-b0ef-47555b1df40b)
-Atomic design merupakan cara mengorganisir dan membangun komponen-komponen dalam hirarki kompleksitas yang meningkat, berdasarkan atom, molekul, organisme, template, dan halaman. Berikut adalah gambaran contoh atomic design:
 ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/fe60979e-a27d-4193-b251-f28771f7a5a7)
+Atomic design merupakan cara mengorganisir dan membangun komponen-komponen dalam hirarki kompleksitas yang meningkat, berdasarkan atom, molekul, organisme, template, dan halaman. Berikut adalah gambaran contoh atomic design:
 Atoms --> komponen terkecil
 Moleculs --> komponen lebih kompleks yang terdiri dari penggabungan atom
 Organisms --> komponen lebih besar yang menggabungkan atom, molekul, dan organisme lainnya
@@ -42,13 +41,13 @@ Pages --> tempat untuk menggunakan template dan diisi dengan konten.
 # Instruction
 1. Login Page
    ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/d80b0605-3dc4-4624-9637-37dc97eaa028)
-  Inputkan email dan password:
-  Email --> eve.holt@reqres.in
-  Password --> cityslicka
+   Inputkan email dan password:
+   Email --> eve.holt@reqres.in
+   Password --> cityslicka
   
-  Pada page Login ini saya membuat 2 case login
-  yang pertama jika login berhasil maka akan terdapat snackbar success login dan diarahkan menuju page dashboard (disini melakukan set token dan set user data pada local storage)
-  yang kedua jika email dan password yang diinputkan tidak sesuai (gunakan email ex: fadilla@gmail.com), maka login akan gagal dan terdapat snackbar alert failes
+   Pada page Login ini saya membuat 2 case login
+   yang pertama jika login berhasil maka akan terdapat snackbar success login dan diarahkan menuju page dashboard (disini melakukan set token dan set user data pada local storage)
+   yang kedua jika email dan password yang diinputkan tidak sesuai (gunakan email ex: fadilla@gmail.com), maka login akan gagal dan terdapat snackbar alert failes
 
 
 3. Dashboard Page
