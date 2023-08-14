@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Single Page Application Specta Company
+Merupakan sebuah simple website yang saya buat untuk mengerjakan technical assessment pada VhiWeb dengan posisi Frontend Developer. Website ini saya buat dengan framework React Js dan UI Library Material UI. Untuk sumber data menggunakan API Publik https://reqres.in. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deploy link : https://test-fe-vhiweb.netlify.app/
 
-## Available Scripts
+# Structure Folder
+![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/e65f508c-3989-4681-9527-71fc65039ccf)
 
-In the project directory, you can run:
+Dalam folder src terdapat beberapa folder lagi di dalamnya diantaranya
+assets --> berisi file-file image yang akan digunakan sebagai aset UI
+components --> folder yang berisikan atoms dan moleculs
+    atoms --> folder yang berisikan komponen terkecil seperti FormInputOutlined,   ButtonDrawerTogle, Logo, dan juga Snackbar
+    moleculs --> folder yang berisikan komponen gabungan dari beberapa atom seperti BoxDetailUser, formLogin, SidebarItem, dan juga TableListUser
+config --> folder yang berisikan konfigurasi project seperti routes (URL page project), service (URL API), serta key storage untuk token dan user data.
+constants --> folder berisikan data-data konstan seperti data sidebar, juga berisikan Route untuk public dan private. Dimana public dapat diakses langsung tanpa login sedangkan private hanya bisa diakses ketika login
+containers --> folder berisikan organisms, templates, dan pages
+    organisms --> folder berisikan komponen gabungan atom, molekul, dan organisme lainnya. Contohnya seperti organisms DetailUser, organisms Header, organisms ListUser, organisms MainLayout, organisms PageNotFound, dan juga organisms Sidebar.
+    templates --> folder berisikan struktur halaman seperti templates list user, templates dashboard, templates detail user
+    pages --> folder untuk menggunakan template.
+reducers --> folder untuk mendefinisikan reducer (bagaimana state dalam store akan diubah berdasarkan data/aksi yang dikirimkan)
+store --> folder untuk membuat dan mengatur store Redux
+utils --> folder yang berisikan function yang akan digunakan lebih dari 1 kali, sehingga disebut sebagai utils
+App.js --> file untuk mengatur routes dan route project
 
-### `npm start`
+Codebase yang saya gunakan menerapkan Atomic Design. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/fe60979e-a27d-4193-b251-f28771f7a5a7)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Atomic design merupakan cara mengorganisir dan membangun komponen-komponen dalam hirarki kompleksitas yang meningkat, berdasarkan atom, molekul, organisme, template, dan halaman. Berikut adalah gambaran contoh atomic design:
+Atoms --> komponen terkecil
+Moleculs --> komponen lebih kompleks yang terdiri dari penggabungan atom
+Organisms --> komponen lebih besar yang menggabungkan atom, molekul, dan organisme lainnya
+Templates ---> struktur halaman
+Pages --> tempat untuk menggunakan template dan diisi dengan konten.
 
-### `npm test`
+# Library yang digunakan
+1. material-ui --> library untuk UI (button, icon, form, dsb)
+2. axios --> library untuk fetch api/integrasi api
+3. formik --> library untuk form validation
+4. prop-types --> library untuk validasi prop yang diterima komponen
+5. yup --> library untuk validasi skema data
+6. redux-thunk --> middleware Redux yang memungkinkan untuk membuat action creator yang mengjasilkan thunk sebagai gantinya
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Instruction
+1. Login Page
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/d80b0605-3dc4-4624-9637-37dc97eaa028)
+   Inputkan email dan password:
+   Email --> eve.holt@reqres.in
+   Password --> cityslicka
+  
+   Pada page Login ini saya membuat 2 case login
+   yang pertama jika login berhasil maka akan terdapat snackbar success login dan diarahkan menuju page dashboard (disini melakukan set token dan set user data pada local storage)
+   yang kedua jika email dan password yang diinputkan tidak sesuai (gunakan email ex: fadilla@gmail.com), maka login akan gagal dan terdapat snackbar alert failes
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Dashboard Page
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/b2a25272-7462-4dd6-b6ba-462415ee4dd3)
+   Pada header tedapat username, jika username diklik akan show menu logout. Apabila klik logout maka user akan logout (clear storage) dan redirect menuju page login. Terdapat button Start Now jika diklik akan redirect pada page List Users (/users)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. List Users
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/d60f9b9c-3e00-4f16-a0d6-a08ded62cc61)
+   Menampilkan list users yang difetch dari api get list users. Terdapat filter user by full name dan ada juga button detail yang jika diklik akan redirect ke detail user (users/${id})
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+7. Detail User
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/a7fcd424-b618-41e7-bdc0-b98e28dd5b05)
+   Menampilkan detail user berdasarkan id pada params. Terdapat action back to page list users dengan klik arrow back button
 
-### `npm run eject`
+   untuk case 'User not found', terjadi jika user dengan id pada params tidak ditemukan.
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/03f7b2c0-0fc4-49ae-b893-92935e78745c)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+9. Page Not Fpund
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/8860158c-69c7-4b29-9b65-202584921963)
+   Page ini akan show ketika user mengakses halaman yang tidak tersedia
