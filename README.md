@@ -24,7 +24,7 @@ App.js --> file untuk mengatur routes dan route project
 
 Codebase yang saya gunakan menerapkan Atomic Design. 
 
-![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/fe60979e-a27d-4193-b251-f28771f7a5a7)
+![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/34a8368a-1f36-4894-afd8-b7b137220d97)
 
 Atomic design merupakan cara mengorganisir dan membangun komponen-komponen dalam hirarki kompleksitas yang meningkat, berdasarkan atom, molekul, organisme, template, dan halaman. Berikut adalah gambaran contoh atomic design:
 Atoms --> komponen terkecil
@@ -43,7 +43,7 @@ Pages --> tempat untuk menggunakan template dan diisi dengan konten.
 
 # Instruction
 1. Login Page
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/72b4b303-5cba-4ff9-aa09-30d28ff97151)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/befb9233-fd18-46a8-883d-6de18a542f6c)
    Inputkan email dan password:
    Email --> eve.holt@reqres.in
    Password --> cityslicka
@@ -54,20 +54,20 @@ Pages --> tempat untuk menggunakan template dan diisi dengan konten.
 
 
 3. Dashboard Page
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/93d35a25-bffb-446c-ba27-e9385b3c3935)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/a04410cf-3bdf-4a60-9de3-3ed168e46433)
    Pada header tedapat username, jika username diklik akan show menu logout. Apabila klik logout maka user akan logout (clear storage) dan redirect menuju page login. Terdapat button Start Now jika diklik akan redirect pada page List Users (/users)
 
 5. List Users
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/383fc26e-6023-44a2-b466-d21926e090a5)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/d4d90482-18b5-4766-b05d-ffffc1689aea)
    Menampilkan list users yang difetch dari api get list users. Terdapat filter user by full name dan ada juga button detail yang jika diklik akan redirect ke detail user (users/${id})
 
 7. Detail User
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/5ca03ba2-204c-41db-80f8-2c954246faf4)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/a3c6be73-adee-4a05-aea1-cae90122b966)
    Menampilkan detail user berdasarkan id pada params. Terdapat action back to page list users dengan klik arrow back button
 
    untuk case 'User not found', terjadi jika user dengan id pada params tidak ditemukan.
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/9a02ae89-ae05-44d7-8848-cc97a28da059)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/607223df-5fb2-4320-adef-61463fbb61d5)
 
 9. Page Not Fpund
-   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/8860158c-69c7-4b29-9b65-202584921963)
+   ![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/79f87754-d86a-4552-a89c-fcf9d11af8cc)
    Page ini akan show ketika user mengakses halaman yang tidak tersedia
