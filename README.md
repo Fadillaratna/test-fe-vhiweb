@@ -4,7 +4,7 @@ Merupakan sebuah simple website yang saya buat untuk mengerjakan technical asses
 Deploy link : https://test-fe-vhiweb.netlify.app/
 
 # Structure Folder
-![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/e65f508c-3989-4681-9527-71fc65039ccf)
+![image](https://github.com/Fadillaratna/test-fe-vhiweb/assets/87308406/807ff8db-b4b2-4d12-afb6-36812d8e8088)
 
 Dalam folder src terdapat beberapa folder lagi di dalamnya diantaranya
 assets --> berisi file-file image yang akan digunakan sebagai aset UI
